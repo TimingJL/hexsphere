@@ -58,7 +58,7 @@ const Hero = () => {
       <GradientMask />
       <Stack alignItems="center" spacing={1} sx={{ marginTop: '240px', zIndex: 10, position: 'relative' }}>
         <h1>網頁設計魔法</h1>
-        <Description>專業設計師團隊，打造你的線上獨特風采</Description>
+        <Description>專業團隊，打造你的線上獨特風采</Description>
         <CTAButton>立即開始</CTAButton>
       </Stack>
     </Section>

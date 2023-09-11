@@ -68,7 +68,7 @@ const OurWork = () => {
           />
           <ServiceBlock
             title="網頁設計"
-            description="確保您的網站在各種裝置和平台上都能完美呈現"
+            description="RWD 設計，確保您的網站在各種裝置和平台上都能完美呈現"
             src={rwdImg}
             style={{ height: isUpMD ? '622px' : '480px' }}
           />
