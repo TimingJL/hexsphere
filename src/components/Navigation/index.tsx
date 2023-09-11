@@ -15,6 +15,7 @@ const options = {
 
 const Container = styled.div`
   position: fixed;
+  font-family: Noto Sans TC;
   top: 0px;
   left: 0px;
   width: 100%;

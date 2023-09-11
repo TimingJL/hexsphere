@@ -5,6 +5,8 @@ import ButtonBase from '@mui/material/ButtonBase';
 import HeroBg from 'src/assets/hero-bg.jpg';
 
 const Section = styled.section`
+  padding-top: 80px;
+  padding: 20px;
   background-image:
     linear-gradient(108deg, rgba(5, 1, 44, 0.50) 3.46%, rgba(54, 84, 183, 0.50) 34.86%, rgba(5, 1, 44, 0.50) 90.84%),
     url(${HeroBg});
@@ -12,14 +14,18 @@ const Section = styled.section`
   background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh;
-  padding-top: 80px;
-  padding: 20px;
   position: relative;
 
   h1 {
     font-size: 48px;
     letter-spacing: 1px;
   }
+`;
+
+const Description = styled.div`
+  color: rgba(255, 255, 255, 0.70);
+  font-family: Noto Sans TC;
+  font-size: 20px;
 `;
 
 const GradientMask = styled.div`
@@ -50,9 +56,9 @@ const Hero = () => {
   return (
     <Section>
       <GradientMask />
-      <Stack alignItems="center" sx={{ marginTop: '240px', zIndex: 10, position: 'relative' }}>
+      <Stack alignItems="center" spacing={1} sx={{ marginTop: '240px', zIndex: 10, position: 'relative' }}>
         <h1>網頁設計魔法</h1>
-        <p>專業設計師團隊，打造你的線上獨特風采</p>
+        <Description>專業設計師團隊，打造你的線上獨特風采</Description>
         <CTAButton>立即開始</CTAButton>
       </Stack>
     </Section>
