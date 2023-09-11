@@ -14,7 +14,7 @@ import ColorBlockBackground from './ColorBlockBackground';
 import ServiceBlock from './ServiceBlock';
 
 const Section = styled.section`
-  padding: 52px 20px;
+  padding: 72px 20px;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -34,13 +34,13 @@ const Description = styled.div`
   font-size: 20px;
 `;
 
-const OurWork = () => {
+const Service = () => {
   const theme = useTheme();
   const isUpLG = useMediaQuery(theme.breakpoints.up('lg'));
   const isUpMD = useMediaQuery(theme.breakpoints.up('md'));
 
   return (
-    <Section id={AnchorId.OUR_WORK}>
+    <Section id={AnchorId.SERVICE}>
       <ColorBlockBackground />
       <Stack
         direction={isUpLG ? "row" : "column"}
@@ -95,4 +95,4 @@ const OurWork = () => {
   )
 }
 
-export default OurWork;
+export default Service;

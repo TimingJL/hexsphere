@@ -4,10 +4,10 @@ import styled from 'styled-components';
 import Stack from '@mui/material/Stack';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
 
 import { AnchorId } from 'src/constants';
+
+import FullScreenDialog from './FullScreenDialog'
 
 const options = {
   root: null,
@@ -15,7 +15,26 @@ const options = {
   threshold: 0.5
 }
 
-const Container = styled.div`
+const menuItems = [
+  {
+    text: '首頁',
+    href: `#${AnchorId.HERO}`
+  },
+  {
+    text: '服務項目',
+    href: `#${AnchorId.SERVICE}`
+  },
+  {
+    text: '團隊介紹',
+    href: `#${AnchorId.TEAM}`
+  },
+  {
+    text: '聯絡我們',
+    href: `#${AnchorId.CONTACT}`
+  },
+];
+
+const Container = styled.nav`
   position: fixed;
   font-family: Noto Sans TC;
   top: 0px;
@@ -78,15 +97,12 @@ const Navigation = () => {
               {
                 isUpSM ? (
                   <>
-                    <A href={`#${AnchorId.HERO}`}>首頁</A>
-                    <A href={`#${AnchorId.OUR_WORK}`}>服務項目</A>
-                    <A href={`#${AnchorId.TEAM}`}>團隊介紹</A>
-                    <A href={`#${AnchorId.CONTACT}`}>聯絡我們</A>
+                    {menuItems.map((item) => (
+                      <A key={item.href} href={item.href}>{item.text}</A>
+                    ))}
                   </>
                 ) : (
-                  <IconButton sx={{ p: '10px', display: 'none' }} aria-label="menu">
-                    <MenuIcon style={{ color: '#fff' }} />
-                  </IconButton>
+                  <FullScreenDialog menuItems={menuItems} />
                 )
               }
             </Stack>

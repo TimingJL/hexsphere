@@ -47,7 +47,7 @@ const CTAButton = styled(ButtonBase)`
   border: 2px solid #D0DBFE !important;
   padding: 10px !important;
   width: 187px !important;
-  background: var(--2, linear-gradient(270deg, #3A40D0 0%, #0084BC 100%));
+  background: linear-gradient(270deg, #3A40D0 0%, #0084BC 100%);
   font-size: 24px;
   letter-spacing: 1.2px;
   text-align: center;

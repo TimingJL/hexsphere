@@ -44,7 +44,7 @@ const Description = styled.div`
 const Section = styled.section`
   background: #000;
   min-height: 100vh;
-  padding: 52px 20px;
+  padding: 72px 20px;
   position: relative;
   overflow: hidden;
 `;

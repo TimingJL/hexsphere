@@ -19,7 +19,7 @@ const ColorBlockBackground = () => {
   const [height, setHeight] = React.useState(0);
 
   React.useEffect(() => {
-    const element = (document.getElementById(AnchorId.OUR_WORK) as HTMLDivElement);
+    const element = (document.getElementById(AnchorId.SERVICE) as HTMLDivElement);
     if (element) {
       setHeight(element.clientHeight);
     }
