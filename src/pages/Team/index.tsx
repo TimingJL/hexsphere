@@ -48,7 +48,7 @@ const Team = () => {
   return (
     <Section>
       <Stack>
-        <Stack alignItems="center">
+        <Stack alignItems="center" spacing={2}>
           <GradientText
             text="專業團隊"
             style={{
@@ -56,7 +56,7 @@ const Team = () => {
               fontSize: '48px'
             }}
           />
-          <Description>Meet Our Team</Description>
+          <Description>認識我們的團隊</Description>
         </Stack>
         <Stack
           direction="row"
