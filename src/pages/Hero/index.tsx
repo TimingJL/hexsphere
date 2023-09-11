@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Stack from '@mui/material/Stack';
+import ButtonBase from '@mui/material/ButtonBase';
 
 import HeroBg from 'src/assets/hero-bg.jpg';
 
@@ -10,7 +11,7 @@ const Section = styled.section`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  min-height: 100vh;
   padding-top: 80px;
   padding: 20px;
   position: relative;
@@ -24,10 +25,25 @@ const Section = styled.section`
 const GradientMask = styled.div`
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 1) 100%);
   height: 100vh;
-  width: 100vw;
+  max-width: 100vw;
+  width: 100%;
   position: absolute;
   left: 0;
   bottom: 0;
+`;
+
+const CTAButton = styled(ButtonBase)`
+  margin-top: 40px !important;
+  margin-bottom: 52px !important;
+  border-radius: 712px !important;
+  border: 2px solid #D0DBFE !important;
+  padding: 10px !important;
+  width: 187px !important;
+  background: var(--2, linear-gradient(270deg, #3A40D0 0%, #0084BC 100%));
+  font-size: 24px;
+  letter-spacing: 1.2px;
+  text-align: center;
+  cursor: pointer;
 `;
 
 const Hero = () => {
@@ -37,7 +53,7 @@ const Hero = () => {
       <Stack alignItems="center" sx={{ marginTop: '240px', zIndex: 10, position: 'relative' }}>
         <h1>網頁設計魔法</h1>
         <p>專業設計師團隊，打造你的線上獨特風采</p>
-        <button>立即開始</button>
+        <CTAButton>立即開始</CTAButton>
       </Stack>
     </Section>
   )
