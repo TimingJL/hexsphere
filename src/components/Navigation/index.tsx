@@ -7,6 +7,8 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 
+import { AnchorId } from 'src/constants';
+
 const options = {
   root: null,
   rootMargin: '50px',
@@ -33,6 +35,14 @@ const Logo = styled.div`
   font-family: 'Roboto Serif', serif;
   font-size: 24px;
   font-weight: 700;
+`;
+
+const A = styled.a`
+  color: rgba(255, 255, 255, 0.60);
+  text-decoration: none;
+  &:hover {
+    color: rgba(255, 255, 255, 1);
+  }
 `;
 
 const Navigation = () => {
@@ -68,13 +78,13 @@ const Navigation = () => {
               {
                 isUpSM ? (
                   <>
-                    <div>首頁</div>
-                    <div>服務項目</div>
-                    <div>團隊介紹</div>
-                    <div>聯絡我們</div>
+                    <A href={`#${AnchorId.HERO}`}>首頁</A>
+                    <A href={`#${AnchorId.OUR_WORK}`}>服務項目</A>
+                    <A href={`#${AnchorId.TEAM}`}>團隊介紹</A>
+                    <A href={`#${AnchorId.CONTACT}`}>聯絡我們</A>
                   </>
                 ) : (
-                  <IconButton sx={{ p: '10px' }} aria-label="menu">
+                  <IconButton sx={{ p: '10px', display: 'none' }} aria-label="menu">
                     <MenuIcon style={{ color: '#fff' }} />
                   </IconButton>
                 )

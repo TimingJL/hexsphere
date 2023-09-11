@@ -8,7 +8,9 @@ import pmImg from 'src/assets/service/project-management.jpg';
 import rwdImg from 'src/assets/service/rwd.jpg';
 import seoImg from 'src/assets/service/seo.jpg';
 import socialMediaImg from 'src/assets/service/social-media.jpg';
+import { AnchorId } from 'src/constants';
 
+import ColorBlockBackground from './ColorBlockBackground';
 import ServiceBlock from './ServiceBlock';
 
 const Section = styled.section`
@@ -17,6 +19,8 @@ const Section = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  overflow: hidden;
 `;
 
 const ServiceGridBlocks = styled.div`
@@ -36,7 +40,8 @@ const OurWork = () => {
   const isUpMD = useMediaQuery(theme.breakpoints.up('md'));
 
   return (
-    <Section>
+    <Section id={AnchorId.OUR_WORK}>
+      <ColorBlockBackground />
       <Stack
         direction={isUpLG ? "row" : "column"}
         spacing={8}

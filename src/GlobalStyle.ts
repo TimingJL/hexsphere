@@ -4,6 +4,7 @@ const GlobalStyle = createGlobalStyle`
   :root {
     background: #000;
     color: #FFF;
+    scroll-behavior: smooth;
   }
 
   h1, h2, h3, h4, h5, h6 {

@@ -1,7 +1,9 @@
+import * as React from 'react';
 import styled from 'styled-components';
 import Stack from '@mui/material/Stack';
 import ButtonBase from '@mui/material/ButtonBase';
 
+import { AnchorId } from 'src/constants';
 import HeroBg from 'src/assets/hero-bg.jpg';
 
 const Section = styled.section`
@@ -53,13 +55,23 @@ const CTAButton = styled(ButtonBase)`
 `;
 
 const Hero = () => {
+  const anchorRef = React.useRef<HTMLAnchorElement>(null);
   return (
-    <Section>
+    <Section id={AnchorId.HERO}>
       <GradientMask />
       <Stack alignItems="center" spacing={1} sx={{ marginTop: '240px', zIndex: 10, position: 'relative' }}>
         <h1>網頁設計魔法</h1>
         <Description>專業團隊，打造你的線上獨特風采</Description>
-        <CTAButton>立即開始</CTAButton>
+        <CTAButton
+          onClick={() => {
+            if (anchorRef.current) {
+              anchorRef.current.click();
+            }
+          }}
+        >
+          立即開始
+        </CTAButton>
+        <a ref={anchorRef} href={`#${AnchorId.CONTACT}`} style={{ display: 'none' }} />
       </Stack>
     </Section>
   )

@@ -4,6 +4,9 @@ import Stack from '@mui/material/Stack';
 import Avatar from '@mui/material/Avatar';
 
 import GradientText from 'src/components/GradientText';
+import { AnchorId } from 'src/constants';
+
+import ColorBlockBackground from './ColorBlockBackground';
 
 const teamMembers = [
   {
@@ -42,11 +45,14 @@ const Section = styled.section`
   background: #000;
   min-height: 100vh;
   padding: 52px 20px;
+  position: relative;
+  overflow: hidden;
 `;
 
 const Team = () => {
   return (
-    <Section>
+    <Section id={AnchorId.TEAM}>
+      <ColorBlockBackground />
       <Stack>
         <Stack alignItems="center" spacing={2}>
           <GradientText

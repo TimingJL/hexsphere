@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components';
 
 import Stack from '@mui/material/Stack';
 import ButtonBase from '@mui/material/ButtonBase';
+import { AnchorId } from 'src/constants';
 
 import GradientText from 'src/components/GradientText';
 
@@ -91,7 +92,7 @@ const ContactUs = () => {
   const [name, setName] = React.useState('');
   const [content, setContent] = React.useState('');
   return (
-    <Section>
+    <Section id={AnchorId.CONTACT}>
       <GradientMask className="gradient-mask" />
       <Stack alignItems="center" spacing={2}>
         <GradientText
