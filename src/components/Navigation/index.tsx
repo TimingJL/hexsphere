@@ -1,3 +1,4 @@
+import * as React from 'react';
 import styled from 'styled-components';
 
 import Stack from '@mui/material/Stack';
@@ -6,18 +7,25 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 
+const options = {
+  root: null,
+  rootMargin: '50px',
+  threshold: 0.5
+}
+
 const Container = styled.div`
   position: fixed;
   top: 0px;
   left: 0px;
   width: 100%;
+  z-index: 999;
 `;
 
 const Box = styled.div`
   color: #FFF;
-  padding: 24px;
-  border-radius: 4px;
+  padding: 16px 24px;
   box-sizing: border-box;
+  transition: all 0.3s ease-in-out;
 `;
 
 const Logo = styled.div`
@@ -27,44 +35,54 @@ const Logo = styled.div`
 `;
 
 const Navigation = () => {
+  const anchorRef = React.useRef(null);
   const theme = useTheme();
   const isUpSM = useMediaQuery(theme.breakpoints.up('sm'));
+  const [isOnTop, setIsOpTop] = React.useState(false);
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const callbackFunction = (entires: any) => {
+    setIsOpTop(entires[0].isIntersecting);
+  }
+
+  React.useEffect(() => {
+    const observer = new IntersectionObserver(callbackFunction, options);
+    if (anchorRef.current) {
+      observer.observe(anchorRef.current);
+    }
+  }, []);
 
   return (
-    <Container
-      {...!isUpSM && {
-        style: {
-          padding: '24px'
-        }
-      }}
-    >
-      <Box
-        style={{
-          width: isUpSM ? '100%' : 'calc(100% - 48px)',
-          background: isUpSM ? 'transparent' : '#000',
-        }}
-      >
-        <Stack direction="row" justifyContent="space-between" alignItems="center">
-          <Logo>Logo</Logo>
-          <Stack direction="row" spacing={isUpSM ? 2 : 1}>
-            {
-              isUpSM ? (
-                <>
-                  <div>Home</div>
-                  <div>Our Work</div>
-                  <div>Team</div>
-                  <div>Contact</div>
-                </>
-              ) : (
-                <IconButton sx={{ p: '10px' }} aria-label="menu">
-                  <MenuIcon style={{ color: '#fff' }} />
-                </IconButton>
-              )
-            }
+    <>
+      <div ref={anchorRef} style={{ position: 'absolute' }} />
+      <Container>
+        <Box
+          style={{
+            background: isOnTop ? 'transparent' : 'rgba(0, 0, 0, 0.5)',
+          }}
+        >
+          <Stack direction="row" justifyContent="space-between" alignItems="center">
+            <Logo>Logo</Logo>
+            <Stack direction="row" spacing={isUpSM ? 2 : 1}>
+              {
+                isUpSM ? (
+                  <>
+                    <div>Home</div>
+                    <div>Our Work</div>
+                    <div>Team</div>
+                    <div>Contact</div>
+                  </>
+                ) : (
+                  <IconButton sx={{ p: '10px' }} aria-label="menu">
+                    <MenuIcon style={{ color: '#fff' }} />
+                  </IconButton>
+                )
+              }
+            </Stack>
           </Stack>
-        </Stack>
-      </Box>
-    </Container>
+        </Box>
+      </Container>
+    </>
   )
 }
 
