@@ -68,10 +68,10 @@ const Navigation = () => {
               {
                 isUpSM ? (
                   <>
-                    <div>Home</div>
-                    <div>Our Work</div>
-                    <div>Team</div>
-                    <div>Contact</div>
+                    <div>首頁</div>
+                    <div>服務項目</div>
+                    <div>團隊介紹</div>
+                    <div>聯絡我們</div>
                   </>
                 ) : (
                   <IconButton sx={{ p: '10px' }} aria-label="menu">
