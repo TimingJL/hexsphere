@@ -13,8 +13,8 @@ import lineIconPath from 'src/assets/third-party/line.png'
 
 const FloatingButton = styled.div`
   position: fixed;
-  right: 32px;
-  bottom: 32px;
+  right: 20px;
+  bottom: 20px;
   z-index: 999;
 `;
 
