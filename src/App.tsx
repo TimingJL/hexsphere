@@ -1,11 +1,35 @@
+import styled from 'styled-components';
+
+import Fab from '@mui/material/Fab';
+
 import Navigation from 'src/components/Navigation';
 import Hero from 'src/pages/Hero'
 import Service from 'src/pages/Service'
 import Team from 'src/pages/Team'
 import ContactUs from 'src/pages/ContactUs'
 import Footer from 'src/pages/Footer'
+import lineIconPath from 'src/assets/third-party/line.png'
+
+
+const FloatingButton = styled.div`
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  z-index: 999;
+`;
+
+const Icon = styled.img`
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+`;
 
 function App() {
+
+  const handleClickLine = () => {
+    window.open("https://line.me/ti/p/vemJRDV61o", "_blank");
+  };
+
   return (
     <>
       <Navigation />
@@ -14,6 +38,11 @@ function App() {
       <Team />
       <ContactUs />
       <Footer />
+      <FloatingButton>
+        <Fab aria-label="line" onClick={handleClickLine}>
+          <Icon alt="line" src={lineIconPath} />
+        </Fab>
+      </FloatingButton>
     </>
   );
 }
