@@ -3,9 +3,10 @@ import styled, { css } from 'styled-components';
 
 import Stack from '@mui/material/Stack';
 import ButtonBase from '@mui/material/ButtonBase';
-import { AnchorId } from 'src/constants';
 
+import { AnchorId } from 'src/constants';
 import GradientText from 'src/components/GradientText';
+import { HEXSPHERE_EMAIL } from 'src/config';
 
 const Section = styled.section`
   background: #000;
@@ -120,7 +121,7 @@ const ContactUs = () => {
         <a
           ref={mailRef}
           style={{ display: 'none' }}
-          href={`mailto:service@team.com?body=${content}&subject=${name}的來信`}
+          href={`mailto:${HEXSPHERE_EMAIL}?body=${content}&subject=${name}的來信`}
         />
       </Stack>
     </Section>

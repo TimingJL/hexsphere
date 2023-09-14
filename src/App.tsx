@@ -9,6 +9,7 @@ import Team from 'src/pages/Team'
 import ContactUs from 'src/pages/ContactUs'
 import Footer from 'src/pages/Footer'
 import lineIconPath from 'src/assets/third-party/line.png'
+import { LINE_OFFICIAL_LINK } from 'src/config';
 
 
 const FloatingButton = styled.div`
@@ -27,7 +28,7 @@ const Icon = styled.img`
 function App() {
 
   const handleClickLine = () => {
-    window.open("https://line.me/ti/p/vemJRDV61o", "_blank");
+    window.open(LINE_OFFICIAL_LINK, "_blank");
   };
 
   return (
