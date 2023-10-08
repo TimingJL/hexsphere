@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    background: #000;
+    background: #FFF;
     color: #FFF;
     scroll-behavior: smooth;
   }

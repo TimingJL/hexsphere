@@ -1,37 +1,109 @@
 import * as React from 'react';
 import styled from 'styled-components';
-import Stack from '@mui/material/Stack';
+
 import ButtonBase from '@mui/material/ButtonBase';
 
 import { AnchorId } from 'src/constants';
-import HeroBg from 'src/assets/hero-bg.jpg';
+import HexagonGridBgPath from 'src/assets/hexagon-grid-bg.svg';
 
 const Section = styled.section`
   padding-top: 80px;
   padding: 20px;
-  background-image:
-    linear-gradient(108deg, rgba(5, 1, 44, 0.50) 3.46%, rgba(54, 84, 183, 0.50) 34.86%, rgba(5, 1, 44, 0.50) 90.84%),
-    url(${HeroBg});
+  background: linear-gradient(115deg, #F0F6FE 8.03%, rgba(222, 229, 254, 0.50) 28.52%, #88BEEF 61.31%, #1B52E0 106.39%);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   min-height: 100vh;
   position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
-  h1 {
-    font-size: 48px;
-    letter-spacing: 1px;
+const HexagonGridBackground = styled.div`
+  background: url(${HexagonGridBgPath});
+  background-size: cover;
+  background-position: center
+  z-index: 1;
+  width: 100vw;
+  height: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100%;
+    background: linear-gradient(115deg, #f0f6fed1 8.03%, rgb(255 255 255 / 98%) 28.52%, #88beefeb 61.31%, #1b52e045 106.39%);
+  }
+`;
+
+const TitleContainer = styled.div`
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  .title {
+    font-weight: 900;
+    font-size: 90px;
+    margin: 0;
+    color: #16163F;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .title__first {
+    letter-spacing: 4px;
+    white-space: nowrap;
+    ${props => props.theme.breakpoints.up("xs")} {
+      font-size: 24px;
+    }
+    ${props => props.theme.breakpoints.up("sm")} {
+      font-size: 28px;
+    }
+  }
+  .title__second {
+    letter-spacing: 40px;
+    white-space: nowrap;
+    ${props => props.theme.breakpoints.up("xs")} {
+      font-size: 48px;
+    }
+    ${props => props.theme.breakpoints.up("sm")} {
+      font-size: 56px;
+    }
+    ${props => props.theme.breakpoints.up("md")} {
+      font-size: 60px;
+    }
   }
 `;
 
 const Description = styled.div`
-  color: rgba(255, 255, 255, 0.70);
+  color: rgba(22, 22, 63, 0.50);
   font-family: Noto Sans TC;
-  font-size: 20px;
+  margin-top: 40px;
+  margin-bottom: 52px;
+  max-width: 600px;
+  text-align: center;
+  ${props => props.theme.breakpoints.up("xs")} {
+    font-size: 16px;
+    max-width: 300px;
+  }
+  ${props => props.theme.breakpoints.up("xs")} {
+    font-size: 20px;
+    max-width: 400px;
+  }
 `;
 
 const GradientMask = styled.div`
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 1) 100%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 60%, rgba(255, 255, 255, 1) 100%);
   height: 100vh;
   max-width: 100vw;
   width: 100%;
@@ -41,13 +113,11 @@ const GradientMask = styled.div`
 `;
 
 const CTAButton = styled(ButtonBase)`
-  margin-top: 40px !important;
-  margin-bottom: 52px !important;
   border-radius: 712px !important;
   border: 2px solid #D0DBFE !important;
   padding: 10px !important;
   width: 187px !important;
-  background: linear-gradient(270deg, #3A40D0 0%, #0084BC 100%);
+  background: linear-gradient(90deg, #5D9DFC 0%, #0053C2 75%);
   font-size: 24px;
   letter-spacing: 1.2px;
   text-align: center;
@@ -56,12 +126,21 @@ const CTAButton = styled(ButtonBase)`
 
 const Hero = () => {
   const anchorRef = React.useRef<HTMLAnchorElement>(null);
+
   return (
     <Section id={AnchorId.HERO}>
+      <HexagonGridBackground />
       <GradientMask />
-      <Stack alignItems="center" spacing={1} sx={{ marginTop: '240px', zIndex: 10, position: 'relative' }}>
-        <h1>網頁設計魔法</h1>
-        <Description>專業團隊，打造你的線上獨特風采</Description>
+      <TitleContainer>
+        <div className="title">
+          <div className="title__first">
+            創建高質感網站<span style={{ letterSpacing: 0 }}>的</span>
+          </div>
+          <div className="title__second">
+            絕佳夥<span style={{ letterSpacing: 0 }}>伴</span>
+          </div>
+        </div>
+        <Description>高質感.響應式網站.企業形象網站設計.客製化網頁設計.活動網站.打造品牌優勢</Description>
         <CTAButton
           onClick={() => {
             if (anchorRef.current) {
@@ -71,8 +150,7 @@ const Hero = () => {
         >
           立即開始
         </CTAButton>
-        <a ref={anchorRef} href={`#${AnchorId.CONTACT}`} style={{ display: 'none' }} />
-      </Stack>
+      </TitleContainer>
     </Section>
   )
 }
