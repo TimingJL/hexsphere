@@ -13,7 +13,7 @@ const teamMembers = [
     name: 'Norelle',
     title: 'Project Manager',
     avatarUrl: 'https://i.pravatar.cc/400?img=1',
-    description: '專案經理 Norelle 擁有超過4年以上的豐富經驗。她在團隊協作、時間管理和溝通方面表現出色。Norelle 擅長網頁設計、用戶體驗設計、線上營銷和 SEO 搜索引擎優化。她的適應能力和組織能力確保了專案的成功。'
+    description: 'Norelle 在資訊產業界擁有豐富經驗，執行過政府、學校及私人企業之網站規劃與系統架構設計專案，擅長專案管理，注重時程、風險控管與使用者體驗，時刻掌握並理解客戶需求，與內外部建立良好溝通橋樑，以達雙方共贏。'
   },
   {
     name: 'Andy',
@@ -25,24 +25,24 @@ const teamMembers = [
     name: 'Taiming',
     title: 'Full-stack Developer',
     avatarUrl: 'https://i.pravatar.cc/400?img=13',
-    description: "Taiming 是一位充滿熱情且擁有超過5年專業經驗的網頁開發人員。精通 RWD、HTML、CSS、JavaScript、React.js、Node.js、TypeScript 和 Python，Taiming 專攻網頁開發和 Chrome Extension 的創建。以一絲不苟的細節關注，Taiming 確保每個專案的系統穩定性。"
+    description: "Taiming 是一位充滿熱情且擁有超過5年專業經驗的網頁開發人員。精通 RWD、HTML、CSS、JavaScript、React.js、Node.js、TypeScript 和 Python。Taiming 專攻網頁開發和 Chrome Extension 的創建。以一絲不苟的態度專注於網頁呈現細節，並確保每個專案的穩定性。"
   },
   {
     name: 'Ariel',
     title: 'Sales & Marketing Manager',
     avatarUrl: 'https://i.pravatar.cc/400?img=9',
-    description: "Ariel 是一位高度技巧的專業人士，擁有超過十年的銷售、行銷和數位專業知識經驗。她擅長社群媒體管理、影片剪輯、後製工作和線上行銷。Ariel 超過10年的豐富經驗使她成為在各種專案中實現卓越成果的寶貴資產。",
+    description: "Ariel 從事國外業務經驗超過十年、產業經驗包含手工具產業、自行車產業、LED燈具產業、IC軟體產業；擅長新客戶開發，國內外客戶關係維繫、合約審核、產品開發案執行控管；同時具備實際數位行銷經驗，擅長社群媒體管理、影片剪輯、後製工作和線上行銷。以專業及具彈性溝通達到客戶滿意及需求。",
   },
 ];
 
 const Description = styled.div`
-  color: rgba(255, 255, 255, 0.70);
+  color: #292929;
   font-family: Noto Sans TC;
   font-size: 20px;
 `;
 
 const Section = styled.section`
-  background: #000;
+  background: #FFF;
   min-height: 100vh;
   padding: 72px 20px;
   position: relative;
@@ -69,7 +69,7 @@ const Team = () => {
           flexWrap="wrap"
           spacing={8}
           justifyContent="center"
-          sx={{ marginTop: 12 }}
+          sx={{ marginTop: 12, zIndex: 1 }}
           useFlexGap
         >
           {teamMembers.map((member) => (
@@ -86,8 +86,8 @@ const Team = () => {
               />
               <GradientText
                 text={member.name}
-                gradientFrom='#FFF'
-                gradientTo='#A2B9F5'
+                gradientFrom='#16163F'
+                gradientTo='#16163F'
                 style={{
                   position: 'relative',
                   zIndex: 1,

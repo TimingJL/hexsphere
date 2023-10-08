@@ -71,7 +71,7 @@ const TitleContainer = styled.div`
     }
   }
   .title__second {
-    letter-spacing: 40px;
+    letter-spacing: 20px;
     white-space: nowrap;
     ${props => props.theme.breakpoints.up("xs")} {
       font-size: 48px;
@@ -81,6 +81,7 @@ const TitleContainer = styled.div`
     }
     ${props => props.theme.breakpoints.up("md")} {
       font-size: 60px;
+      letter-spacing: 40px;
     }
   }
 `;
@@ -122,6 +123,7 @@ const CTAButton = styled(ButtonBase)`
   letter-spacing: 1.2px;
   text-align: center;
   cursor: pointer;
+  color: #FFF !important;
 `;
 
 const Hero = () => {
@@ -134,10 +136,10 @@ const Hero = () => {
       <TitleContainer>
         <div className="title">
           <div className="title__first">
-            創建高質感網站<span style={{ letterSpacing: 0 }}>的</span>
+            用好的設計，為你帶來<span style={{ letterSpacing: 0 }}>來</span>
           </div>
           <div className="title__second">
-            絕佳夥<span style={{ letterSpacing: 0 }}>伴</span>
+            超凡行銷<span style={{ letterSpacing: 0 }}>力</span>
           </div>
         </div>
         <Description>高質感.響應式網站.企業形象網站設計.客製化網頁設計.活動網站.打造品牌優勢</Description>

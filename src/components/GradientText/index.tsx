@@ -21,8 +21,8 @@ const GradientText = (props: IProps) => {
   const {
     text,
     style,
-    gradientFrom = '#D4F0FF',
-    gradientTo = '#2099CD',
+    gradientFrom = '#3b3bae',
+    gradientTo = '#70d4ff',
   } = props;
   return (
     <Gradient

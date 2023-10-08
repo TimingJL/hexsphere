@@ -3,7 +3,6 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
   :root {
     background: #FFF;
-    color: #FFF;
     scroll-behavior: smooth;
   }
 
