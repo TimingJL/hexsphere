@@ -136,7 +136,7 @@ const Hero = () => {
       <TitleContainer>
         <div className="title">
           <div className="title__first">
-            用好的設計，為你帶來<span style={{ letterSpacing: 0 }}>來</span>
+            用好的設計，為你帶<span style={{ letterSpacing: 0 }}>來</span>
           </div>
           <div className="title__second">
             超凡行銷<span style={{ letterSpacing: 0 }}>力</span>

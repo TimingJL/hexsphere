@@ -39,6 +39,8 @@ const Description = styled.div`
   color: #292929;
   font-family: Noto Sans TC;
   font-size: 20px;
+  max-width: 600px;
+  text-align: center;
 `;
 
 const Section = styled.section`
@@ -56,13 +58,15 @@ const Team = () => {
       <Stack>
         <Stack alignItems="center" spacing={2}>
           <GradientText
-            text="專業團隊"
+            text="團隊介紹"
             style={{
               fontWeight: 900,
               fontSize: '48px'
             }}
           />
-          <Description>認識我們的團隊</Description>
+          <Description>
+            HexSphere由Hexagonal與Sphere組成。萬物起源之水，利用它的分子結構，創造出多樣的水型態，其中六方水晶系完美的對稱軸與角度，搭配球體的圓弧度所創造出的獨特空間，展現出團隊高度專業性、溝通彈性與協調力。
+          </Description>
         </Stack>
         <Stack
           direction="row"
