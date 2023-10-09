@@ -22,6 +22,7 @@ const Container = styled.div`
   padding: 16px 24px;
   overflow: hidden;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 `;
 
 const Background = styled.div`
@@ -63,7 +64,7 @@ const FullScreenDialog = (props: IProps) => {
   return (
     <>
       <IconButton sx={{ p: '10px', opacity: open ? 0 : 1 }} aria-label="menu" onClick={handleClickOpen}>
-        <MenuIcon style={{ color: '#fff' }} />
+        <MenuIcon style={{ color: '#0145AB' }} />
       </IconButton>
       <Dialog
         fullScreen
@@ -73,6 +74,9 @@ const FullScreenDialog = (props: IProps) => {
         sx={{
           '& .MuiDialog-paper': {
             background: 'transparent',
+          },
+          '& .MuiPaper-root': {
+            overflow: 'hidden'
           }
         }}
       >

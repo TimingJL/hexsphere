@@ -48,11 +48,15 @@ const Container = styled.nav`
   z-index: 999;
 `;
 
-const Box = styled.div`
+const Box = styled.div<{ $isOnTop: boolean }>`
   color: #0145AB;
   padding: 16px 24px;
   box-sizing: border-box;
   transition: all 0.3s ease-in-out;
+  backdrop-filter: ${props => props.$isOnTop ? 'none' : 'blur(10px)'};
+  -webkit-backdrop-filter: ${props => props.$isOnTop ? 'none' : 'blur(10px)'};
+  background: ${props => props.$isOnTop ? 'transparent' : 'rgba(255, 255, 255, 0.5)'};
+  box-shadow: ${props => props.$isOnTop ? 'none' : '0px 0px 10px rgba(0, 0, 0, 0.1)'};
 `;
 
 const Logo = styled.div`
@@ -95,13 +99,7 @@ const Navigation = () => {
     <>
       <div ref={anchorRef} style={{ position: 'absolute' }} />
       <Container>
-        <Box
-          style={{
-            boxShadow: isOnTop ? 'none' : '0px 0px 10px rgba(0, 0, 0, 0.1)',
-            background: isOnTop ? 'transparent' : 'rgba(255, 255, 255, 0.5)',
-            backdropFilter: isOnTop ? 'none' : 'blur(10px)',
-          }}
-        >
+        <Box $isOnTop={isOnTop}>
           <Stack direction="row" justifyContent="space-between" alignItems="center">
             <Logo>
               <img src={hexsphereLogoSrc} alt="hexsphere-logo" width={40} style={{ aspectRatio: 1 }} />
