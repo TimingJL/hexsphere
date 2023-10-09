@@ -8,6 +8,7 @@ import GradientText from 'src/components/GradientText';
 import { HEXSPHERE_EMAIL } from 'src/config';
 import lineIconPath from 'src/assets/third-party/line.png'
 import contactUsSrc from 'src/assets/contact/contact-us-bg.jpg'
+import { LINE_OFFICIAL_LINK } from 'src/config';
 
 const Section = styled.section`
   background: #FFF;
@@ -66,6 +67,11 @@ const Icon = styled.img`
 `;
 
 const ContactUs = () => {
+
+  const handleClickLine = () => {
+    window.open(LINE_OFFICIAL_LINK, "_blank");
+  };
+
   return (
     <Section id={AnchorId.CONTACT}>
       <Stack alignItems="center" spacing={2}>
@@ -87,7 +93,7 @@ const ContactUs = () => {
             hexsphereinfo@gmail.com
           </a>
         </MailInfo>
-        <AddFriendBtn>
+        <AddFriendBtn onClick={handleClickLine}>
           <Icon src={lineIconPath} />
           加入 LINE 好友
         </AddFriendBtn>

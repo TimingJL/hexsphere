@@ -5,6 +5,7 @@ import Avatar from '@mui/material/Avatar';
 
 import GradientText from 'src/components/GradientText';
 import { AnchorId } from 'src/constants';
+import hexsphereLogo from 'src/assets/logo/hexsphere-logo.svg'
 
 import ColorBlockBackground from './ColorBlockBackground';
 
@@ -35,18 +36,26 @@ const teamMembers = [
   },
 ];
 
+const HexSphereName = styled.div`
+  font-family: 'Saira', sans-serif;
+  color: #0145AB;
+  font-size: 52px;
+  z-index: 1;
+`;
+
 const Description = styled.div`
   color: #292929;
   font-family: Noto Sans TC;
   font-size: 20px;
   max-width: 600px;
   text-align: center;
+  z-index: 1;
 `;
 
 const Section = styled.section`
   background: #FFF;
   min-height: 100vh;
-  padding: 72px 20px;
+  padding: 92px 20px;
   position: relative;
   overflow: hidden;
 `;
@@ -55,7 +64,14 @@ const Team = () => {
   return (
     <Section id={AnchorId.TEAM}>
       <ColorBlockBackground />
-      <Stack>
+      <Stack spacing={8}>
+        <Stack alignItems="center" spacing={2}>
+          <img src={hexsphereLogo} width={180} style={{ aspectRatio: 1 }} />
+          <HexSphereName>HEXSPHERE</HexSphereName>
+          <Description>
+            HexSphere 由 Hexagonal 與 Sphere 組成。萬物起源之水，利用它的分子結構，創造出多樣的水型態，其中六方水晶系完美的對稱軸與角度，搭配球體的圓弧度所創造出的獨特空間，展現出團隊高度專業性、溝通彈性與協調力。
+          </Description>
+        </Stack>
         <Stack alignItems="center" spacing={2}>
           <GradientText
             text="團隊介紹"
@@ -64,9 +80,6 @@ const Team = () => {
               fontSize: '48px'
             }}
           />
-          <Description>
-            HexSphere由Hexagonal與Sphere組成。萬物起源之水，利用它的分子結構，創造出多樣的水型態，其中六方水晶系完美的對稱軸與角度，搭配球體的圓弧度所創造出的獨特空間，展現出團隊高度專業性、溝通彈性與協調力。
-          </Description>
         </Stack>
         <Stack
           direction="row"

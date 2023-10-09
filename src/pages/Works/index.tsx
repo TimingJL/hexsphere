@@ -28,7 +28,7 @@ import appSrc from 'src/assets/works/app.jpg';
 const websiteData = [
   {
     img: teachesPlatformSrc,
-    title: '線上教學網站',
+    title: '線上課程網站',
     rows: 2,
     cols: 2,
   },
@@ -87,7 +87,7 @@ const uxUiData = [
 ];
 
 const Section = styled.section`
-  padding: 72px 20px;
+  padding: 92px 20px;
   min-height: 100vh;
 `;
 

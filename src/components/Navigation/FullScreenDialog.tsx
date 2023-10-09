@@ -21,6 +21,7 @@ const Container = styled.div`
   height: 100vh;
   padding: 16px 24px;
   overflow: hidden;
+  backdrop-filter: blur(10px);
 `;
 
 const Background = styled.div`

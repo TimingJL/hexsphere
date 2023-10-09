@@ -153,6 +153,7 @@ const Hero = () => {
         >
           立即開始
         </CTAButton>
+        <a href={`#${AnchorId.CONTACT}`} ref={anchorRef} style={{ display: 'none' }} />
       </TitleContainer>
     </Section>
   )
