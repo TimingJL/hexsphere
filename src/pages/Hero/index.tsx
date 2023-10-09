@@ -87,19 +87,20 @@ const TitleContainer = styled.div`
 `;
 
 const Description = styled.div`
-  color: rgba(22, 22, 63, 0.50);
+  color: #FFF;
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
   font-family: Noto Sans TC;
   margin-top: 40px;
   margin-bottom: 52px;
   max-width: 600px;
   text-align: center;
   ${props => props.theme.breakpoints.up("xs")} {
-    font-size: 16px;
-    max-width: 300px;
-  }
-  ${props => props.theme.breakpoints.up("xs")} {
     font-size: 20px;
     max-width: 400px;
+  }
+  ${props => props.theme.breakpoints.up("xs")} {
+    font-size: 24px;
+    max-width: 500px;
   }
 `;
 

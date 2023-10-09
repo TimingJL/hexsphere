@@ -7,6 +7,7 @@ const FooterStyle = styled.footer`
   padding: 32px 20px;
   color: rgba(255, 255, 255, 0.80);
   font-family: Noto Sans TC;
+  background: #0f124e;
 `;
 
 const Footer = () => {

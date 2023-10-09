@@ -1,103 +1,78 @@
 import * as React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import Stack from '@mui/material/Stack';
-import ButtonBase from '@mui/material/ButtonBase';
 
 import { AnchorId } from 'src/constants';
 import GradientText from 'src/components/GradientText';
 import { HEXSPHERE_EMAIL } from 'src/config';
+import lineIconPath from 'src/assets/third-party/line.png'
+import contactUsSrc from 'src/assets/contact/contact-us-bg.jpg'
 
 const Section = styled.section`
-  background: #000;
-  background-image:
-    linear-gradient(108deg, rgba(5, 1, 44, 0.50) 3.46%, rgba(54, 84, 183, 0.50) 34.86%, rgba(5, 1, 44, 0.50) 90.84%);
-  min-height: 100vh;
-  padding: 80px 20px 52px;
+  background: #FFF;
+  background: linear-gradient(
+    115deg,
+    #dcc5ff 0.1%,
+    rgb(56 209 255 / 66%) 28.52%,
+    #0070d9a2 61.31%,
+    #afffce 106.39%
+  ), url(${contactUsSrc});
+  background-size: cover;
+  background-position: center;
+  padding: 240px 20px 40px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
+  min-height: 50vh;
 `;
 
 const Description = styled.div`
-  color: rgba(255, 255, 255, 0.70);
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+  font-family: Noto Sans TC;
+  font-size: 24px;
+`;
+
+const MailInfo = styled.div`
   font-family: Noto Sans TC;
   font-size: 20px;
-`;
-
-const Paper = styled.div`
-  background: rgba(255, 255, 255, 0.1);
-  width: 100%;
-  max-width: 640px;
-  border-radius: 12px;
-  padding: 24px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-`;
-
-const textFieldStyle = css`
-  background: rgba(255, 255, 255, 0.1);
-  border: none;
-  border-radius: 8px;
-  padding: 20px;
-  outline-color: rgba(54, 84, 183, 0.50);
-  color: #FFF;
-  font-size: 18px;
-`;
-
-const Input = styled.input`
-  ${textFieldStyle}
-`;
-
-const TextArea = styled.textarea`
-  ${textFieldStyle}
-  resize: none;
-  height: 200px;
-`;
-
-const CTAButton = styled(ButtonBase)`
-  margin-top: 40px !important;
-  margin-bottom: 52px !important;
-  border-radius: 712px !important;
-  border: 2px solid #D0DBFE !important;
-  padding: 10px !important;
-  width: 187px !important;
-  background: var(--2, linear-gradient(270deg, #3A40D0 0%, #0084BC 100%));
-  font-size: 24px;
-  letter-spacing: 1.2px;
-  text-align: center;
-  cursor: pointer;
-  &:disabled {
-    background: #EEEEEE66;
-    border: none !important;
-    color: #a9a9a9;
-    cursor: not-allowed;
+  a {
+    color: white;
+    &:hover {
+      opacity: 0.9;
+    }
   }
 `;
 
-const GradientMask = styled.div`
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 50%, rgba(0, 0, 0, 1) 100%);
-  height: 300px;
-  max-width: 100vw;
-  width: 100%;
-  position: absolute;
-  left: 0;
-  top: 0;
+const AddFriendBtn = styled.button`
+  border: none;
+  cursor: pointer;
+  color: #FFF;
+  background: #39CD01;
+  border-radius: 50px;
+  padding-right: 32px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 700;
+`;
+
+const Icon = styled.img`
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
 `;
 
 const ContactUs = () => {
-  const mailRef = React.useRef<HTMLAnchorElement>(null);
-  const [name, setName] = React.useState('');
-  const [content, setContent] = React.useState('');
   return (
     <Section id={AnchorId.CONTACT}>
-      <GradientMask className="gradient-mask" />
       <Stack alignItems="center" spacing={2}>
         <GradientText
           text="聯絡我們"
+          gradientFrom="#fff"
+          gradientTo="#fff"
           style={{
             fontWeight: 900,
             fontSize: '48px'
@@ -105,27 +80,20 @@ const ContactUs = () => {
         />
         <Description>我們很樂意為您服務</Description>
       </Stack>
-      <Stack alignItems="center" spacing={2} sx={{ marginTop: 6 }}>
-        <Paper>
-          <Input type="text" placeholder="姓名/公司" value={name} onChange={(event) => setName(event.target.value)} />
-          <TextArea placeholder="內容" value={content} onChange={(event) => setContent(event.target.value)} />
-        </Paper>
-        <CTAButton
-          disabled={name.trim() === '' || content.trim() === ''}
-          onClick={() => {
-            mailRef.current?.click();
-          }}
-        >
-          送出
-        </CTAButton>
-        <a
-          ref={mailRef}
-          style={{ display: 'none' }}
-          href={`mailto:${HEXSPHERE_EMAIL}?body=${content}&subject=${name}的來信`}
-        />
+      <Stack alignItems="center" spacing={6} sx={{ marginTop: 6, color: '#FFF' }}>
+        <MailInfo>
+          <span style={{ marginRight: '8px' }}>Mail:</span>
+          <a href={`mailto:${HEXSPHERE_EMAIL}`}>
+            hexsphereinfo@gmail.com
+          </a>
+        </MailInfo>
+        <AddFriendBtn>
+          <Icon src={lineIconPath} />
+          加入 LINE 好友
+        </AddFriendBtn>
       </Stack>
     </Section>
-  )
-}
+  );
+};
 
 export default ContactUs;

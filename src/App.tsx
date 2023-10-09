@@ -8,7 +8,7 @@ import Hero from 'src/pages/Hero'
 import Works from 'src/pages/Works'
 // import Service from 'src/pages/Service'
 import Team from 'src/pages/Team'
-// import ContactUs from 'src/pages/ContactUs'
+import ContactUs from 'src/pages/ContactUs'
 import Footer from 'src/pages/Footer'
 import lineIconPath from 'src/assets/third-party/line.png'
 import { LINE_OFFICIAL_LINK } from 'src/config';
@@ -40,7 +40,7 @@ function App() {
       <Works />
       {/* <Service /> */}
       <Team />
-      {/* <ContactUs /> */}
+      <ContactUs />
       <Footer />
       <FloatingButton>
         <Fab aria-label="line" onClick={handleClickLine}>
