@@ -87,7 +87,7 @@ const TitleContainer = styled.div`
 `;
 
 const Description = styled.div`
-  color: #FFF;
+  color: #003c95;
   text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
   font-family: Noto Sans TC;
   margin-top: 40px;
